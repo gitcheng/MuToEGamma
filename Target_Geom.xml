@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<edml>
+    <included>
+        <detector>
+	    <volume name="Target">
+  <!-- Target -->
+	      <cyl name="Target" id="0" zmin="-3" zmax="3" radius="0.5" thick="0.0050" mat="svt-Aluminum" meas="" />
+	    </volume>
+	</detector>
+    </included>
+</edml>

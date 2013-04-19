@@ -1,0 +1,10 @@
+#########################################
+# Charged lepton flavor violating decay 
+#  mu+ -> e+ gamma
+#########################################
+
+Decay mu+
+1.000  e+ gamma       PHSP;
+Enddecay
+
+End

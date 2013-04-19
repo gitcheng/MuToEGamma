@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<edml>
+    <included>
+        <detector>
+            <volume name="Si_Tracking">
+
+	      <cyl name="SvtSi" id="0" zmin="-7.39973" zmax="7.39973" radius="1.500" thick="0.0100" mat="svt-Silicon" meas="2SideSiInnerStriplets,SiStripletsdEdx" overlap="0.0" />
+	      <ring name="SvtSupport" id="0" z="7.39973" lowradius="1.475" hiradius="1.525" thick="0.1" mat="svt-Silicon" />
+	      
+	      <cyl name="SvtSi" id="1" zmin="-12.33289" zmax="12.33289" radius="2.500" thick="0.0100" mat="svt-Silicon" meas="2SideSiInnerStriplets,SiStripletsdEdx" overlap="0.0" />
+	      <ring name="SvtSupport" id="1" z="12.33289" lowradius="2.475" hiradius="2.525" thick="0.1" mat="svt-Silicon" />
+	      
+	      <cyl name="SvtSi" id="2" zmin="-29.59893" zmax="29.59893" radius="6.000" thick="0.0100" mat="svt-Silicon" meas="2SideSiInnerStriplets,SiStripletsdEdx" overlap="0.0" />
+	      <ring name="SvtSupport" id="2" z="29.59893" lowradius="5.975" hiradius="6.025" thick="0.1" mat="svt-Silicon" />
+	      
+	      <cyl name="SvtSi" id="3" zmin="-34.53208" zmax="34.53208" radius="7.000" thick="0.0100" mat="svt-Silicon" meas="2SideSiInnerStriplets,SiStripletsdEdx" overlap="0.0" />
+	      <ring name="SvtSupport" id="3" z="34.53208" lowradius="6.975" hiradius="7.025" thick="0.1" mat="svt-Silicon" />
+	      
+	      <cyl name="SvtSi" id="4" zmin="-49.33155" zmax="49.33155" radius="10.000" thick="0.0100" mat="svt-Silicon" meas="2SideSiInnerStriplets,SiStripletsdEdx" overlap="0.0" />
+	      <ring name="SvtSupport" id="4" z="49.33155" lowradius="9.975" hiradius="10.025" thick="0.1" mat="svt-Silicon" />
+	      
+	      <cyl name="SvtSi" id="5" zmin="-54.26470" zmax="54.26470" radius="11.000" thick="0.0100" mat="svt-Silicon" meas="2SideSiInnerStriplets,SiStripletsdEdx" overlap="0.0" />
+	      <ring name="SvtSupport" id="5" z="54.26470" lowradius="10.975" hiradius="11.025" thick="0.1" mat="svt-Silicon" />
+	      
+	      <cyl name="SvtSi" id="6" zmin="-64.13101" zmax="64.13101" radius="13.000" thick="0.0100" mat="svt-Silicon" meas="2SideSiInnerStriplets,SiStripletsdEdx" overlap="0.0" />
+	      <ring name="SvtSupport" id="6" z="64.13101" lowradius="12.975" hiradius="13.025" thick="0.1" mat="svt-Silicon" />
+	      
+	      <cyl name="SvtSi" id="7" zmin="-69.06417" zmax="69.06417" radius="14.000" thick="0.0100" mat="svt-Silicon" meas="2SideSiInnerStriplets,SiStripletsdEdx" overlap="0.0" />
+	      <ring name="SvtSupport" id="7" z="69.06417" lowradius="13.975" hiradius="14.025" thick="0.1" mat="svt-Silicon" />
+
+
+	      <!-- radiator -->
+	      <rect name="RadPb" id="0" orientation="1" centerrho="1.0" centerz="0" centerphi="-1.04719755" usize="1.1547" vsize="9.70" thick="0.1" mat="pep-Lead" axisphi="0.523599" />
+	      <rect name="RadPb" id="1" orientation="1" centerrho="1.0" centerz="0" centerphi="0" usize="1.1547" vsize="9.70" thick="0.1" mat="pep-Lead" axisphi="1.5707963" />
+	      <rect name="RadPb" id="2" orientation="1" centerrho="1.0" centerz="0" centerphi="1.04719755" usize="1.1547" vsize="9.70" thick="0.1" mat="pep-Lead" axisphi="2.617994" />
+
+            </volume>
+        </detector>
+        <!-- voxel parameter config section must have the same section name as the volume -->
+        <config>
+            <sect name="Si_Tracking">
+                <param name="rbounds"    type="vector"  > 0.5 1.4 2.0 5.0 6.5 8.5 10.5 11.5 13.5 15.0 </param>
+                <!-- no phi segmentation needed, as all elements are perfectly cylindrical -->
+                <param name="nphivoxels"    type="vector" > 1 1 1 1 1 1 1 1 1</param>
+                <param name="zbounds"   type="vector"         >  -200 200   </param>            
+            </sect>
+        </config>
+    </included>
+</edml>
