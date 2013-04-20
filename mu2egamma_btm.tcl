@@ -1,6 +1,7 @@
 FwkCfgVar UDECAYfile MuToEGamma/MuToEGamma.dec
 FwkCfgVar UDECAYTcl MuToEGamma/single_part_gen.tcl
 FwkCfgVar UGENERATE continuum
+FwkCfgVar MEGDEBUGALL
 FwkCfgVar MEGDEBUG
 FwkCfgVar PacDisplayFileName
 FwkCfgVar BeamConstraint
@@ -48,7 +49,9 @@ seq append PmcPhysicsSequence MuToEGammaAnalysis
 talkto MuToEGammaAnalysis {
     muInputListName  set muToEGamma
     muOutputListName set muToEGammaRefit
-    verbose set f
+    if [ info exists MEGDEBUG ] {
+	verbose set t
+    }
     show
 }
 
@@ -70,7 +73,7 @@ if [ info exists UDECAYTcl ] {
     sourceFoundFile $UDECAYTcl
 }
 
-if [ info exists MEGDEBUG ] {
+if [ info exists MEGDEBUGALL ] {
     set verbosemodules { PmcSimulate PmcReconstruct PmcLoadRecoCandidates }
     foreach mm $verbosemodules {
         talkto $mm {

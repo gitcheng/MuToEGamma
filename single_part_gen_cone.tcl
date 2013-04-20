@@ -7,8 +7,8 @@ FwkCfgVar SingleMomentumHi
 FwkCfgVar usePt false
 FwkCfgVar SinglePhimin
 FwkCfgVar SinglePhimax
-FwkCfgVar TCone1Z -1.99
-FwkCfgVar TCone2Z 1.99
+FwkCfgVar TCone1Z -2.99
+FwkCfgVar TCone2Z 2.99
 FwkCfgVar TConeZ0 0
 FwkCfgVar TConeR 0.49
 

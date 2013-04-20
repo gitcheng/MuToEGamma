@@ -1,5 +1,5 @@
-FwkCfgVar UDECAYfile PacQA/scripts/mu2egamma/MuToEGamma.dec
-FwkCfgVar UDECAYTcl PacQA/scripts/mu2egamma/single_part_gen.tcl
+FwkCfgVar UDECAYfile MuToEGamma/MuToEGamma.dec
+FwkCfgVar UDECAYTcl MuToEGamma/single_part_gen.tcl
 FwkCfgVar UGENERATE continuum
 FwkCfgVar PACQADEBUG
 FwkCfgVar PacDisplayFileName

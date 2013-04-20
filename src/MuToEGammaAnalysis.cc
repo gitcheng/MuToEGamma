@@ -30,6 +30,7 @@
 #include "PDT/PdtLund.hh"
 #include "BaBar/Constants.hh"
 #include "BbrGeom/BbrPointErr.hh"
+#include "BetaRecoAdapter/BtaAbsRecoObject.hh"
 
 #include "DetectorModel/DetSet.hh"
 #include "DetectorModel/DetElem.hh"
@@ -115,12 +116,11 @@ MuToEGammaAnalysis::event( AbsEvent *anEvent )
 
     for (; ielem != elements.end(); ielem++ ) {
       int elemid= (*ielem)->elementNumber() ;
-      if ( elemid % 100 == 0 ) { // Only pick the element id that ends with 00
-        std::string ename= (*ielem)->elementName();
-        if ( 0!= ename.compare(0,6,"Target") ) continue; // name should start with "Target"
-        _target_elems.push_back( *ielem );
-        ErrMsg(warning) << "Found " << ename << endmsg;
-      }
+      std::string ename= (*ielem)->elementName();
+      if ( 0!= ename.compare(0,6,"Target") ) continue; // name should start with "Target"
+      _target_elems.push_back( *ielem );
+      ErrMsg(warning) << "Found detector element: " << ename << " id " << elemid
+		      << endmsg;
     }
 
     assert(_target_elems.size() >= 1);
@@ -143,6 +143,9 @@ MuToEGammaAnalysis::event( AbsEvent *anEvent )
     ErrMsg(fatal) << "Could not put list " <<  _muOutputListName.value() 
 		  << ". This is likely a configuration error." << endmsg;
   }
+
+  // origin
+  static const HepPoint pos_origin(0,0,0);
   
   for (vector<BtaCandidate*>::const_iterator i = mulist->begin(), e = mulist->end(); i != e; ++i) {
     BtaCandidate* mu= *i;
@@ -150,6 +153,9 @@ MuToEGammaAnalysis::event( AbsEvent *anEvent )
     const BtaCandidate* positron = mu->getDaughter(PdtLund::e_plus);
     const BtaCandidate* gamma= mu->getDaughter(PdtLund::gamma);
     if ( !positron or !gamma ) continue;
+
+    // Find the poca of the positron track to the z axis
+    BbrPointErr poca= positron->recoObject()->positionErr(pos_origin, BtaAbsRecoObject::XY);
 
     // positron track
     const TrkRecoTrk *trk= positron->recoTrk();
@@ -163,15 +169,37 @@ MuToEGammaAnalysis::event( AbsEvent *anEvent )
     int nint=0;
     double minchi2=1e16;
     BtaCandidate *fittedmu(0);
+    vector<BbrPointErr> pnterrs; // possible muon decay constrain points
     for ( unsigned i=0; i<_target_elems.size(); i++) {
-      DetIntersection dinter(_target_elems[i], &fit->traj(), -20, 20);
-      int jflag=  _target_elems[i]->intersect(&fit->traj(), dinter);
-      if (! jflag ) continue;
-      nint++;
-      double pathlen= dinter.pathlen;
-      BbrPointErr poserr= fit->positionErr(pathlen);
+      double pathlen= -10.0;
+      const double pathlenmax=100;
+      const double epsilon= 0.01;
+      int jflag=1;
+      if ( _verbose.value() ) {
+	ErrMsg(debugging) << "target element #" << i << endmsg;
+      }
+      while ( jflag!=0 && pathlen < pathlenmax ) {
+	DetIntersection dinter(_target_elems[i], &fit->traj(), pathlen+epsilon, pathlenmax);
+	jflag= _target_elems[i]->intersect(&fit->traj(), dinter);
+	pathlen= dinter.pathlen;
+	if ( _verbose.value() ) {
+	  ErrMsg(debugging) << " jflag= " << jflag << " pathlen= " << pathlen
+			    << endmsg;
+	}  
+	if ( jflag ) {
+	  nint++;
+	  BbrPointErr poserr= fit->positionErr(pathlen);
+	  pnterrs.push_back( poserr );
+	}
+      }
+    }
 
-      BtaOpMakeTree comb;
+    // If no intersections are found, use the poca
+    pnterrs.push_back( poca );
+    // Find the best fit
+    BtaOpMakeTree comb;
+    for (vector<BbrPointErr>::const_iterator i= pnterrs.begin(), e = pnterrs.end(); i != e; ++i) {
+      BbrPointErr poserr= *i;
       BtaCandidate* cand= comb.create(*positron, *gamma);
       cand->setType( mu->pdtEntry() );
       setGeoConstraint(*cand);
@@ -183,12 +211,17 @@ MuToEGammaAnalysis::event( AbsEvent *anEvent )
       fitter.fit();
       BtaCandidate updmu= fitter.getFittedTree(); // all candidates in tree updated
       double thischi2= updmu.decayVtx()->chiSquared();
+      
       if ( thischi2 < minchi2 ) {
 	minchi2= thischi2;
+	if ( fittedmu != 0 ) {
+	  delete fittedmu;
+	  fittedmu=0;
+	}
 	fittedmu= new BtaCandidate(updmu);
       }
-      //delete cand;
     }
+
 
     _hNintersection->accumulate(nint);
 

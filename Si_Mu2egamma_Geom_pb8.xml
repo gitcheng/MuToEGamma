@@ -5,43 +5,43 @@
             <volume name="Si_Tracking">
 
 	      <!-- Tracker -->
-<cyl name="SvtSi" id="0" zmin="-7.39973" zmax="7.39973" radius="1.500" thick="0.0050" mat="svt-Silicon" meas="2SideSiInnerStriplets,SiStripletsdEdx" overlap="0.0" />
-<cyl name="SvtKapton" id="0" zmin="-7.42440" zmax="7.42440" radius="1.505" thick="0.0050" mat="svt-Kapton" overlap="0.0" />
-<ring name="SvtSupport" id="0" z="7.39973" lowradius="1.475" hiradius="1.525" thick="0.3" mat="svt-Aluminum" />
+<cyl name="SvtSi" id="0" zmin="-12.39973" zmax="12.39973" radius="1.500" thick="0.0050" mat="svt-Silicon" meas="2SideSiInnerStriplets,SiStripletsdEdx" overlap="0.0" />
+<cyl name="SvtKapton" id="0" zmin="-12.42440" zmax="12.42440" radius="1.505" thick="0.0050" mat="svt-Kapton" overlap="0.0" />
+<ring name="SvtSupport" id="0" z="12.39973" lowradius="1.475" hiradius="1.525" thick="0.3" mat="svt-Aluminum" />
 
-<cyl name="SvtSi" id="1" zmin="-11.34626" zmax="11.34626" radius="2.300" thick="0.0050" mat="svt-Silicon" meas="2SideSiInnerStriplets,SiStripletsdEdx" overlap="0.0" />
-<cyl name="SvtKapton" id="1" zmin="-11.37092" zmax="11.37092" radius="2.305" thick="0.0050" mat="svt-Kapton" overlap="0.0" />
-<ring name="SvtSupport" id="1" z="11.34626" lowradius="2.275" hiradius="2.325" thick="0.3" mat="svt-Aluminum" />
+<cyl name="SvtSi" id="1" zmin="-16.34626" zmax="16.34626" radius="2.300" thick="0.0050" mat="svt-Silicon" meas="2SideSiInnerStriplets,SiStripletsdEdx" overlap="0.0" />
+<cyl name="SvtKapton" id="1" zmin="-16.37092" zmax="16.37092" radius="2.305" thick="0.0050" mat="svt-Kapton" overlap="0.0" />
+<ring name="SvtSupport" id="1" z="16.34626" lowradius="2.275" hiradius="2.325" thick="0.3" mat="svt-Aluminum" />
 
-<cyl name="SvtSi" id="2" zmin="-41.93182" zmax="41.93182" radius="8.500" thick="0.0050" mat="svt-Silicon" meas="2SideSiInnerStriplets,SiStripletsdEdx" overlap="0.0" />
-<cyl name="SvtKapton" id="2" zmin="-41.95648" zmax="41.95648" radius="8.505" thick="0.0050" mat="svt-Kapton" overlap="0.0" />
-<ring name="SvtSupport" id="2" z="41.93182" lowradius="8.475" hiradius="8.525" thick="0.3" mat="svt-Aluminum" />
+<cyl name="SvtSi" id="2" zmin="-46.93182" zmax="46.93182" radius="8.500" thick="0.0050" mat="svt-Silicon" meas="2SideSiInnerStriplets,SiStripletsdEdx" overlap="0.0" />
+<cyl name="SvtKapton" id="2" zmin="-46.95648" zmax="46.95648" radius="8.505" thick="0.0050" mat="svt-Kapton" overlap="0.0" />
+<ring name="SvtSupport" id="2" z="46.93182" lowradius="8.475" hiradius="8.525" thick="0.3" mat="svt-Aluminum" />
 
-<cyl name="SvtSi" id="3" zmin="-45.87834" zmax="45.87834" radius="9.300" thick="0.0050" mat="svt-Silicon" meas="2SideSiInnerStriplets,SiStripletsdEdx" overlap="0.0" />
-<cyl name="SvtKapton" id="3" zmin="-45.90301" zmax="45.90301" radius="9.305" thick="0.0050" mat="svt-Kapton" overlap="0.0" />
-<ring name="SvtSupport" id="3" z="45.87834" lowradius="9.275" hiradius="9.325" thick="0.3" mat="svt-Aluminum" />
+<cyl name="SvtSi" id="3" zmin="-50.87834" zmax="50.87834" radius="9.300" thick="0.0050" mat="svt-Silicon" meas="2SideSiInnerStriplets,SiStripletsdEdx" overlap="0.0" />
+<cyl name="SvtKapton" id="3" zmin="-50.90301" zmax="50.90301" radius="9.305" thick="0.0050" mat="svt-Kapton" overlap="0.0" />
+<ring name="SvtSupport" id="3" z="50.87834" lowradius="9.275" hiradius="9.325" thick="0.3" mat="svt-Aluminum" />
 
-<cyl name="SvtSi" id="4" zmin="-54.26470" zmax="54.26470" radius="11.000" thick="0.0050" mat="svt-Silicon" meas="2SideSiInnerStriplets,SiStripletsdEdx" overlap="0.0" />
-<cyl name="SvtKapton" id="4" zmin="-54.28937" zmax="54.28937" radius="11.005" thick="0.0050" mat="svt-Kapton" overlap="0.0" />
-<ring name="SvtSupport" id="4" z="54.26470" lowradius="10.975" hiradius="11.025" thick="0.3" mat="svt-Aluminum" />
+<cyl name="SvtSi" id="4" zmin="-59.26470" zmax="59.26470" radius="11.000" thick="0.0050" mat="svt-Silicon" meas="2SideSiInnerStriplets,SiStripletsdEdx" overlap="0.0" />
+<cyl name="SvtKapton" id="4" zmin="-59.28937" zmax="59.28937" radius="11.005" thick="0.0050" mat="svt-Kapton" overlap="0.0" />
+<ring name="SvtSupport" id="4" z="59.26470" lowradius="10.975" hiradius="11.025" thick="0.3" mat="svt-Aluminum" />
 
-<cyl name="SvtSi" id="5" zmin="-64.13101" zmax="64.13101" radius="13.000" thick="0.0050" mat="svt-Silicon" meas="2SideSiInnerStriplets,SiStripletsdEdx" overlap="0.0" />
-<cyl name="SvtKapton" id="5" zmin="-64.15568" zmax="64.15568" radius="13.005" thick="0.0050" mat="svt-Kapton" overlap="0.0" />
-<ring name="SvtSupport" id="5" z="64.13101" lowradius="12.975" hiradius="13.025" thick="0.3" mat="svt-Aluminum" />
+<cyl name="SvtSi" id="5" zmin="-69.13101" zmax="69.13101" radius="13.000" thick="0.0050" mat="svt-Silicon" meas="2SideSiInnerStriplets,SiStripletsdEdx" overlap="0.0" />
+<cyl name="SvtKapton" id="5" zmin="-69.15568" zmax="69.15568" radius="13.005" thick="0.0050" mat="svt-Kapton" overlap="0.0" />
+<ring name="SvtSupport" id="5" z="69.13101" lowradius="12.975" hiradius="13.025" thick="0.3" mat="svt-Aluminum" />
 
-<cyl name="SvtSi" id="6" zmin="-69.06417" zmax="69.06417" radius="14.000" thick="0.0050" mat="svt-Silicon" meas="2SideSiInnerStriplets,SiStripletsdEdx" overlap="0.0" />
-<cyl name="SvtKapton" id="6" zmin="-69.08883" zmax="69.08883" radius="14.005" thick="0.0050" mat="svt-Kapton" overlap="0.0" />
-<ring name="SvtSupport" id="6" z="69.06417" lowradius="13.975" hiradius="14.025" thick="0.3" mat="svt-Aluminum" />
+<cyl name="SvtSi" id="6" zmin="-74.06417" zmax="74.06417" radius="14.000" thick="0.0050" mat="svt-Silicon" meas="2SideSiInnerStriplets,SiStripletsdEdx" overlap="0.0" />
+<cyl name="SvtKapton" id="6" zmin="-74.08883" zmax="74.08883" radius="14.005" thick="0.0050" mat="svt-Kapton" overlap="0.0" />
+<ring name="SvtSupport" id="6" z="74.06417" lowradius="13.975" hiradius="14.025" thick="0.3" mat="svt-Aluminum" />
 
 	      <!-- radiator -->
-<rect name="RadPb" id="0" orientation="1" centerrho="8.00" centerz="0" centerphi="0.196350" usize="3.1826" vsize="78.9305" thick="0.0560" mat="pep-Lead" axisphi="1.767146" />
-<rect name="RadPb" id="1" orientation="1" centerrho="8.00" centerz="0" centerphi="0.589049" usize="3.1826" vsize="78.9305" thick="0.0560" mat="pep-Lead" axisphi="2.159845" />
-<rect name="RadPb" id="2" orientation="1" centerrho="8.00" centerz="0" centerphi="0.981748" usize="3.1826" vsize="78.9305" thick="0.0560" mat="pep-Lead" axisphi="2.552544" />
-<rect name="RadPb" id="3" orientation="1" centerrho="8.00" centerz="0" centerphi="1.374447" usize="3.1826" vsize="78.9305" thick="0.0560" mat="pep-Lead" axisphi="2.945243" />
-<rect name="RadPb" id="4" orientation="1" centerrho="8.00" centerz="0" centerphi="1.767146" usize="3.1826" vsize="78.9305" thick="0.0560" mat="pep-Lead" axisphi="3.337942" />
-<rect name="RadPb" id="5" orientation="1" centerrho="8.00" centerz="0" centerphi="2.159845" usize="3.1826" vsize="78.9305" thick="0.0560" mat="pep-Lead" axisphi="3.730641" />
-<rect name="RadPb" id="6" orientation="1" centerrho="8.00" centerz="0" centerphi="2.552544" usize="3.1826" vsize="78.9305" thick="0.0560" mat="pep-Lead" axisphi="4.123340" />
-<rect name="RadPb" id="7" orientation="1" centerrho="8.00" centerz="0" centerphi="2.945243" usize="3.1826" vsize="78.9305" thick="0.0560" mat="pep-Lead" axisphi="4.516039" />
+<rect name="RadPb" id="0" orientation="1" centerrho="8.00" centerz="0" centerphi="0.196350"             usize="3.1826" vsize="83.9305" thick="0.0560" mat="pep-Lead" axisphi="1.767146" />
+<rect name="RadPb" id="1" orientation="1" centerrho="8.00" centerz="0" centerphi="0.589049"             usize="3.1826" vsize="83.9305" thick="0.0560" mat="pep-Lead" axisphi="2.159845" />
+<rect name="RadPb" id="2" orientation="1" centerrho="8.00" centerz="0" centerphi="0.981748"             usize="3.1826" vsize="83.9305" thick="0.0560" mat="pep-Lead" axisphi="2.552544" />
+<rect name="RadPb" id="3" orientation="1" centerrho="8.00" centerz="0" centerphi="1.374447"             usize="3.1826" vsize="83.9305" thick="0.0560" mat="pep-Lead" axisphi="2.945243" />
+<rect name="RadPb" id="4" orientation="1" centerrho="8.00" centerz="0" centerphi="1.767146"             usize="3.1826" vsize="83.9305" thick="0.0560" mat="pep-Lead" axisphi="3.337942" />
+<rect name="RadPb" id="5" orientation="1" centerrho="8.00" centerz="0" centerphi="2.159845"             usize="3.1826" vsize="83.9305" thick="0.0560" mat="pep-Lead" axisphi="3.730641" />
+<rect name="RadPb" id="6" orientation="1" centerrho="8.00" centerz="0" centerphi="2.552544"             usize="3.1826" vsize="83.9305" thick="0.0560" mat="pep-Lead" axisphi="4.123340" />
+<rect name="RadPb" id="7" orientation="1" centerrho="8.00" centerz="0" centerphi="2.945243"             usize="3.1826" vsize="83.9305" thick="0.0560" mat="pep-Lead" axisphi="4.516039" />
 
   </volume>
         </detector>

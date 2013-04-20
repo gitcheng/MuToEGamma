@@ -163,7 +163,7 @@ bool GfiSingleParticleOnCone::generateEvent(AbsEvent* anEvent,
 
   // Generate a random (x,y) that is uniform on a circle
   double theta= Constants::twoPi * generateDouble();
-  double r= sqrt( generateDouble() * _coneR.value() );
+  double r= sqrt( generateDouble() ) * _coneR.value() ;
 
 
 
