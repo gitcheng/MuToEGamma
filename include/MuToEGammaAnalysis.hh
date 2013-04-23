@@ -19,6 +19,7 @@
 #include "AbsParm/AbsParmIfdStrKey.hh"
 #include "Framework/AbsParmDouble.hh"
 #include "Framework/AbsParmGeneral.hh"
+#include "BbrGeom/BbrPointErr.hh"
 
 class HepTupleManager;
 class HepTuple;
@@ -26,7 +27,6 @@ class HepHistogram;
 class BtaCandidate;
 class PacDetector;
 class DetElem;
-
 class MuToEGammaAnalysis : public AppModule {
 
 public:
@@ -48,6 +48,9 @@ protected:
   AbsParmIfdStrKey _eventInfoList;
   AbsParmIfdStrKey _muInputListName, _muOutputListName;
 
+protected:
+  BbrPointErr poca_on_target(const BbrPointErr* poca);
+
 private:
 
   int _eid;
@@ -59,5 +62,6 @@ private:
   
   HepHistogram *_hNinputmuons;
   HepHistogram *_hNintersection;
+
 };
 #endif

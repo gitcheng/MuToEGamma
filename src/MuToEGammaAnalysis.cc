@@ -40,6 +40,7 @@
 #include "PacSim/PacSimTrack.hh"
 #include "PacSim/PacSimHit.hh"
 #include "PacGeom/PacDetElem.hh"
+#include "PacGeom/PacConeDetElem.hh"
 #include "PacGeom/PacMeasurement.hh"
 
 #include "TrkBase/TrkRecoTrk.hh"
@@ -165,14 +166,27 @@ MuToEGammaAnalysis::event( AbsEvent *anEvent )
       continue;
     }
 
-    // Find the intersect between a trajectory and a det element.
+    //cout << "poca= " << poca << endl;
+
+    // for (int i=0; i<50; i++) {
+    //   double flt= -1+ i*2/50.0;
+    //   HepPoint pos= fit->position(flt);
+    //   cout << flt << ", " << pos.x() << ", " << pos.y() << ", " << pos.z() << ", " << endl;
+    // }
+
+    // cout << "Trajectory " << endl;
+    // fit->traj().printAll(cout);
+
+    // Find the intersect between a trajectory and target element.
     int nint=0;
     double minchi2=1e16;
     BtaCandidate *fittedmu(0);
     vector<BbrPointErr> pnterrs; // possible muon decay constrain points
     for ( unsigned i=0; i<_target_elems.size(); i++) {
-      double pathlen= -10.0;
-      const double pathlenmax=100;
+      // cout << " element name= " << _target_elems[i]->elementName() 
+      // 	   << " type " << _target_elems[i]->detectorType()->typeName() << endl;
+      double pathlen= -1.0;
+      const double pathlenmax=5;
       const double epsilon= 0.01;
       int jflag=1;
       if ( _verbose.value() ) {
@@ -180,7 +194,10 @@ MuToEGammaAnalysis::event( AbsEvent *anEvent )
       }
       while ( jflag!=0 && pathlen < pathlenmax ) {
 	DetIntersection dinter(_target_elems[i], &fit->traj(), pathlen+epsilon, pathlenmax);
+	//const PacDetElem* pelem= dynamic_cast<const PacDetElem*>( _target_elems[i] );
 	jflag= _target_elems[i]->intersect(&fit->traj(), dinter);
+	//const TrkGeomTraj *tgtrj= dynamic_cast<const TrkGeomTraj*>(&fit->traj());
+	//jflag= pelem->intersect(tgtrj, dinter);
 	pathlen= dinter.pathlen;
 	if ( _verbose.value() ) {
 	  ErrMsg(debugging) << " jflag= " << jflag << " pathlen= " << pathlen
@@ -194,8 +211,10 @@ MuToEGammaAnalysis::event( AbsEvent *anEvent )
       }
     }
 
-    // If no intersections are found, use the poca
-    pnterrs.push_back( poca );
+    // If no intersections are found, use the point on the cone closest to poca
+    if ( pnterrs.size() == 0 ) {
+      pnterrs.push_back( poca_on_target(&poca) );
+    }
     // Find the best fit
     BtaOpMakeTree comb;
     for (vector<BbrPointErr>::const_iterator i= pnterrs.begin(), e = pnterrs.end(); i != e; ++i) {
@@ -242,3 +261,49 @@ MuToEGammaAnalysis::event( AbsEvent *anEvent )
 }
 
 
+BbrPointErr MuToEGammaAnalysis::poca_on_target(const BbrPointErr *poca) {
+  // FIXME. Serious kludge
+
+  BbrPointErr retval = *poca;
+
+  int i0(-1);
+  double zmin(1000), zmax(-1000);
+  for ( unsigned i=0; i<_target_elems.size(); i++) {
+    const PacDetElem *pelem= dynamic_cast<const PacDetElem*>(_target_elems[i]);
+    if (  pelem->surfaceType() != PacDetElem::cone ) {
+      ErrMsg(fatal) << "Only knows how to deal with cones" << endmsg;
+    }
+    const PacConeDetElem* cone= dynamic_cast<const PacConeDetElem*>(_target_elems[i]);
+    double r1= cone->coneType()->lowR() * cone->cone()->sinTheta();
+    double r2= cone->coneType()->hiR() * cone->cone()->sinTheta();
+    double z1= r1/cone->tanTheta()+ cone->zVertex();
+    double z2= r2/cone->tanTheta()+ cone->zVertex();
+
+    if ( z1 < zmin ) zmin=z1;
+    if ( z2 < zmin ) zmin=z2;
+    if ( z1 > zmax ) zmax=z1;
+    if ( z2 > zmax ) zmax=z2;
+
+    if ( poca->z() <= std::max(z1,z2) && poca->z() > std::min(z1,z2) ) {
+      i0= i;
+      break;
+    }
+  }
+
+  if ( i0 < 0 ) {  // poca z is outsize the cones
+    // Set the point to the vertex
+    retval.setX(0);
+    retval.setY(0);
+    if ( poca->z() > zmax ) retval.setZ(zmax);
+    else retval.setZ(zmin);
+  } else {
+    const PacConeDetElem* cone= dynamic_cast<const PacConeDetElem*>(_target_elems[i0]);
+    double rc= cone->radius( poca->z() );
+    retval.setX( rc * poca->x() / poca->perp() );
+    retval.setY( rc * poca->y() / poca->perp() );
+  }
+
+  // ErrMsg(warning) << *poca << endmsg;
+  // ErrMsg(warning) << retval << endmsg;
+  return retval;
+}
