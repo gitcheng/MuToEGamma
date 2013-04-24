@@ -8,7 +8,7 @@ set TConeZ0 0
 set TConeR 0.49
 set NEVENTS 250
 set PRINTFREQ 1
-#set MEGDEBUG 1
+set MEGDEBUG 1
 ErrLoggingLevel routine
 #sourceFoundFile PacQA/scripts/mu2egamma/mu2egamma.tcl
 sourceFoundFile MuToEGamma/mu2egamma_btm.tcl
