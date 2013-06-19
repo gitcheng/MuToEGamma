@@ -6,7 +6,7 @@ FwkCfgVar PacDisplayFileName
 
 set PmcAnalysis PacQMonSVT
 
-sourceFoundFile PacMC/PacMC_mu2egamma.tcl
+sourceFoundFile MuToEGamma/PacMC_mu2egamma.tcl
 
 # Customize generator
 disableGenerators 0

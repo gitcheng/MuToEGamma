@@ -75,13 +75,13 @@ ErrMsg trace "done configuring simulation sequence"
 
 # setup reconstruction sequence
 #
-sourceFoundFile PacMC/PmcReconstructionSequence_mu2egamma.tcl
+sourceFoundFile MuToEGamma/PmcReconstructionSequence_mu2egamma.tcl
 path append PacMC PmcReconstructionSequence
 ErrMsg trace "done configuring reconstruction sequence"
 
 # setup basic physics sequence
 #
-sourceFoundFile PacMC/PmcPhysicsSequence_mu2egamma.tcl
+sourceFoundFile MuToEGamma/PmcPhysicsSequence_mu2egamma.tcl
 path append PacMC PmcPhysicsSequence
 ErrMsg trace "done configuring physics sequence"
 

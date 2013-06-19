@@ -41,7 +41,7 @@
 #include "BaBar/Constants.hh"
 #include "AbsEvent/AbsEvent.hh"
 #include "AbsEvent/getTmpAList.hh"
-#include "CLHEP/Geometry/HepPoint.h"
+#include "BbrGeom/HepPoint.hh"
 #include "GfiBase/GfiContCollisionGenerator.hh"
 #include "PepData/PepCollision.hh"
 #include "PDT/Pdt.hh"

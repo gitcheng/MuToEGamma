@@ -4,7 +4,7 @@
         <measures>
             <device name="2SideSiInner"
                 type="DoubleSideSiStrips"
-                sensitiveTimeWindow="0.4e-6"
+                sensitiveTimeWindow="100e-9"
                 phiResModel="0."
                 phiResPar0="0.001"
                 phiPTRatio="0.18"
@@ -18,11 +18,13 @@
                 zngFactor="2.0"
                 zEff="0.95"
                 NormRes="0.000"
+                sensorSeparation="0.1"
+                sensorSize="5.0"
                 />
 
             <device name="2SideSiOuter"
                 type="DoubleSideSiStrips"
-                sensitiveTimeWindow="0.4e-6"
+                sensitiveTimeWindow="400e-9"
                 phiResModel="0."
                 phiResPar0="0.0015"
                 phiPTRatio="0.36"
@@ -36,24 +38,50 @@
                 zngFactor="2.5"
                 zEff="0.98"
                 NormRes="0.000"
+                sensorSeparation="0.1"
+                sensorSize="5.0"
                 />
 
               <device name="2SideSiInnerStriplets"
                 type="DoubleSideSiStrips"
-                sensitiveTimeWindow="0.4e-6"
+                sensitiveTimeWindow="60e-9"
                 phiResModel="0."
                 phiResPar0="0.0008"
                 phiPTRatio="0.18"
                 phingFrac="0.2"
                 phingFactor="2.5"
-                phiEff="0.99"
+                phiEff="0.90"
                 zResModel="0."
                 zResPar0="0.0008"
                 zPTRatio="0.18"
                 zngFrac="0.1"
                 zngFactor="2.0"
-                zEff="0.99"
+                zEff="0.90"
                 NormRes="0.000"
+                sensorSeparation="0.1"
+                sensorSize="2.0"
+                />
+
+                    <!-- BaBar layer 3 has strange bonding, define it special -->
+
+            <device name="2SideSiLayer3"
+                type="DoubleSideSiStrips"
+                sensitiveTimeWindow="150e-9"
+                phiResModel="0."
+                phiResPar0="0.0015"
+                phiPTRatio="0.36"
+                phingFrac="0.1"
+                phingFactor="2.0"
+                phiEff="0.9"
+                zResModel="0."
+                zResPar0="0.0014"
+                zPTRatio="0.18"
+                zngFrac="0.1"
+                zngFactor="2.0"
+                zEff="0.6"
+                NormRes="0.000"
+                sensorSeparation="0.1"
+                sensorSize="5.0"
                 />
 
 
@@ -70,6 +98,8 @@
                 ngFactor="2.0"
                 Eff="0.95"
                 NormRes="0.000"
+                sensorSeparation="0.1"
+                sensorSize="5.0"
                 />
 
             <device name="SiHybridPixels"
@@ -97,6 +127,8 @@
                 ngFactor="2.0"
                 Eff="0.95"
                 NormRes="0.000"
+                sensorSeparation="0.1"
+                sensorSize="5.0"
                 />
                 
         <device name="SiStripsdEdx" type="dEdx"
