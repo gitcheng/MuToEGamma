@@ -38,6 +38,7 @@
 #include "BtaTupleMaker/BtuTupleMaker.hh"
 #include "MuToEGamma/MuToEGammaAnalysis.hh"
 #include "MuToEGamma/GfiSingleParticleOnCone.hh"
+#include "MuToEGamma/GfiRandomEGammaOnCone.hh"
 
 //-----------------------------------------------------------------------
 // Local Macros, Typedefs, Structures, Unions and Forward Declarations --
@@ -67,6 +68,7 @@ AppUserBuild::AppUserBuild( AppFramework* theFramework )
   add(new MuToEGammaAnalysis("MuToEGammaAnalysis", "mu to e gamma analysis module")); 
   add(new BtuTupleMaker( "BtuTupleMaker","Tuple maker module for users"));
   add(new GfiSingleParticleOnCone("GfiSingleParticleOnCone", "Single particle generator originating from a double-cone") );
+  add(new GfiRandomEGammaOnCone("GfiRandomEGammaOnCone", "Two random positron and gamma originating from a double-cone") );
 }
 
 //--------------

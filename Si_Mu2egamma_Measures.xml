@@ -4,7 +4,7 @@
         <measures>
             <device name="2SideSiInner"
                 type="DoubleSideSiStrips"
-                sensitiveTimeWindow="100e-9"
+                sensitiveTimeWindow="100e-6"
                 phiResModel="0."
                 phiResPar0="0.001"
                 phiPTRatio="0.18"
@@ -24,7 +24,7 @@
 
             <device name="2SideSiOuter"
                 type="DoubleSideSiStrips"
-                sensitiveTimeWindow="400e-9"
+                sensitiveTimeWindow="100e-6"
                 phiResModel="0."
                 phiResPar0="0.0015"
                 phiPTRatio="0.36"
@@ -44,7 +44,7 @@
 
               <device name="2SideSiInnerStriplets"
                 type="DoubleSideSiStrips"
-                sensitiveTimeWindow="60e-9"
+                sensitiveTimeWindow="100e-6"
                 phiResModel="0."
                 phiResPar0="0.0008"
                 phiPTRatio="0.18"
@@ -66,7 +66,7 @@
 
             <device name="2SideSiLayer3"
                 type="DoubleSideSiStrips"
-                sensitiveTimeWindow="150e-9"
+                sensitiveTimeWindow="100e-6"
                 phiResModel="0."
                 phiResPar0="0.0015"
                 phiPTRatio="0.36"
@@ -87,7 +87,7 @@
 
             <device name="SiMaps"
                 type="SiPixels"
-                sensitiveTimeWindow="0.4e-6"
+                sensitiveTimeWindow="100e-6"
                 phiResModel="0."
                 phiResPar0="0.001"
                 phiPTRatio="0.36"
@@ -104,7 +104,7 @@
 
             <device name="SiHybridPixels"
                 type="SiPixels"
-                sensitiveTimeWindow="0.4e-6"
+                sensitiveTimeWindow="100e-6"
                 phiResModel="1."
                 phiResPar0="0.0007"
                 phiResPar1="0.0060"

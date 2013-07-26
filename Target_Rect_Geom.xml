@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<edml>
+    <included>
+        <detector>
+	    <volume name="Stop_Target">
+  <!-- Target -->
+                <rect name="Target" id="0" orientation="1" centerrho="0" centerz="0" centerphi="0.4" axisphi="0.0" usize="1" vsize="10" thick="0.01" mat="dch-Aluminum" meas="" />
+
+
+	    </volume>
+	</detector>
+        <config>
+            <sect name="Stop_Target">
+                <param name="rbounds"    type="vector"  > 0.0 1.0 </param>
+
+                <!-- no phi segmentation needed, as all elements are perfectly cylindrical -->
+                <param name="nphivoxels"    type="vector" > 1 </param>
+                <param name="zbounds"   type="vector"         >  -10 10  </param>            
+            </sect>
+        </config>
+    </included>
+</edml>

@@ -249,6 +249,8 @@ MuToEGammaAnalysis::event( AbsEvent *anEvent )
 	ErrMsg(debugging) << " pdt=  " << fittedmu->pdtEntry()->name() << endmsg;
       }
       outputMuons->push_back(fittedmu);
+    } else {
+      outputMuons->push_back(mu);
     }
 
     if ( _verbose.value() ) {

@@ -114,6 +114,7 @@ talkto BtuTupleMaker {
     ntpBlockConfigs  set "gamma gamma 2 20"
     ntpBlockConfigs  set "e+ e 0 20" 
     ntpBlockContents set "mu : MCIdx Mass Vertex VtxChi2 Momentum"
+    ntpAuxListContents set "mu: muToEGamma : preFit : Mass Momentum Vertex VtxChi2"
     ntpBlockContents set "e : MCIdx Momentum"
     ntpBlockContents set "gamma : MCIdx Mass Momentum Vertex VtxChi2"
 
