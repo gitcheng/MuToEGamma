@@ -179,7 +179,7 @@ MuToEGammaAnalysis::event( AbsEvent *anEvent )
 
     // Find the intersect between a trajectory and target element.
     int nint=0;
-    double minchi2=1e16;
+    //    double minchi2=1e16;
     BtaCandidate *fittedmu(0);
     vector<BbrPointErr> pnterrs; // possible muon decay constrain points
     for ( unsigned i=0; i<_target_elems.size(); i++) {
@@ -215,7 +215,10 @@ MuToEGammaAnalysis::event( AbsEvent *anEvent )
     if ( pnterrs.size() == 0 ) {
       pnterrs.push_back( poca_on_target(&poca) );
     }
-    // Find the best fit
+
+    // Find the best fit; the one closest to back-to-back, i.e., the inner
+    // product of the two unit vector is closest to -1.
+    double innerprod= 999;
     BtaOpMakeTree comb;
     for (vector<BbrPointErr>::const_iterator i= pnterrs.begin(), e = pnterrs.end(); i != e; ++i) {
       BbrPointErr poserr= *i;
@@ -229,10 +232,14 @@ MuToEGammaAnalysis::event( AbsEvent *anEvent )
       VtxFitterOper fitter(*cand, algo);
       fitter.fit();
       BtaCandidate updmu= fitter.getFittedTree(); // all candidates in tree updated
-      double thischi2= updmu.decayVtx()->chiSquared();
-      
-      if ( thischi2 < minchi2 ) {
-	minchi2= thischi2;
+      BtaCandidate e_fit= fitter.getFitted(*positron);
+      BtaCandidate g_fit= fitter.getFitted(*gamma);
+      double thisip= e_fit.p3().unit().dot(g_fit.p3().unit());
+      if ( thisip < innerprod ) {
+	innerprod = thisip;
+      // double thischi2= updmu.decayVtx()->chiSquared();
+      // if ( thischi2 < minchi2 ) {
+      // 	minchi2= thischi2;
 	if ( fittedmu != 0 ) {
 	  delete fittedmu;
 	  fittedmu=0;

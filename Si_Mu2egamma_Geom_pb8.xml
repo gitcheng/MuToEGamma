@@ -5,38 +5,39 @@
             <volume name="Si_Tracking">
 
 	      <!-- Tracker -->
-<cyl name="SvtSi" id="0" zmin="-12.39973" zmax="12.39973" radius="1.500" thick="0.0050" mat="svt-Silicon" meas="2SideSiInnerStriplets,SiStripletsdEdx" overlap="0.0" />
-<cyl name="SvtKapton" id="0" zmin="-12.42440" zmax="12.42440" radius="1.505" thick="0.0050" mat="svt-Kapton" overlap="0.0" />
-<ring name="SvtSupport" id="0" z="12.39973" lowradius="1.475" hiradius="1.525" thick="0.3" mat="svt-Aluminum" />
+<cyl name="SvtSi" id="0" zmin="-17.39973" zmax="17.39973" radius="1.500" thick="0.0050" mat="svt-Silicon" meas="2SideSiInnerStriplets,SiStripletsdEdx" overlap="0.0" />
+<cyl name="SvtKapton" id="0" zmin="-17.42440" zmax="17.42440" radius="1.505" thick="0.0050" mat="svt-Kapton" overlap="0.0" />
+<ring name="SvtSupport" id="0" z="17.39973" lowradius="1.475" hiradius="1.525" thick="0.3" mat="svt-Aluminum" />
 
-<cyl name="SvtSi" id="1" zmin="-16.34626" zmax="16.34626" radius="2.300" thick="0.0050" mat="svt-Silicon" meas="2SideSiInnerStriplets,SiStripletsdEdx" overlap="0.0" />
-<cyl name="SvtKapton" id="1" zmin="-16.37092" zmax="16.37092" radius="2.305" thick="0.0050" mat="svt-Kapton" overlap="0.0" />
-<ring name="SvtSupport" id="1" z="16.34626" lowradius="2.275" hiradius="2.325" thick="0.3" mat="svt-Aluminum" />
+<cyl name="SvtSi" id="1" zmin="-21.34626" zmax="21.34626" radius="2.300" thick="0.0050" mat="svt-Silicon" meas="2SideSiInnerStriplets,SiStripletsdEdx" overlap="0.0" />
+<cyl name="SvtKapton" id="1" zmin="-21.37092" zmax="21.37092" radius="2.305" thick="0.0050" mat="svt-Kapton" overlap="0.0" />
+<ring name="SvtSupport" id="1" z="21.34626" lowradius="2.275" hiradius="2.325" thick="0.3" mat="svt-Aluminum" />
 
-<cyl name="SvtSi" id="2" zmin="-46.93182" zmax="46.93182" radius="8.500" thick="0.0050" mat="svt-Silicon" meas="2SideSiInnerStriplets,SiStripletsdEdx" overlap="0.0" />
-<cyl name="SvtKapton" id="2" zmin="-46.95648" zmax="46.95648" radius="8.505" thick="0.0050" mat="svt-Kapton" overlap="0.0" />
-<ring name="SvtSupport" id="2" z="46.93182" lowradius="8.475" hiradius="8.525" thick="0.3" mat="svt-Aluminum" />
+<cyl name="SvtSi" id="2" zmin="-51.93182" zmax="51.93182" radius="8.500" thick="0.0050" mat="svt-Silicon" meas="2SideSiInnerStriplets,SiStripletsdEdx" overlap="0.0" />
+<cyl name="SvtKapton" id="2" zmin="-51.95648" zmax="51.95648" radius="8.505" thick="0.0050" mat="svt-Kapton" overlap="0.0" />
+<ring name="SvtSupport" id="2" z="51.93182" lowradius="8.475" hiradius="8.525" thick="0.3" mat="svt-Aluminum" />
 
-<cyl name="SvtSi" id="3" zmin="-50.87834" zmax="50.87834" radius="9.300" thick="0.0050" mat="svt-Silicon" meas="2SideSiInnerStriplets,SiStripletsdEdx" overlap="0.0" />
-<cyl name="SvtKapton" id="3" zmin="-50.90301" zmax="50.90301" radius="9.305" thick="0.0050" mat="svt-Kapton" overlap="0.0" />
-<ring name="SvtSupport" id="3" z="50.87834" lowradius="9.275" hiradius="9.325" thick="0.3" mat="svt-Aluminum" />
+<cyl name="SvtSi" id="3" zmin="-55.87834" zmax="55.87834" radius="9.300" thick="0.0050" mat="svt-Silicon" meas="2SideSiInnerStriplets,SiStripletsdEdx" overlap="0.0" />
+<cyl name="SvtKapton" id="3" zmin="-55.90301" zmax="55.90301" radius="9.305" thick="0.0050" mat="svt-Kapton" overlap="0.0" />
+<ring name="SvtSupport" id="3" z="55.87834" lowradius="9.275" hiradius="9.325" thick="0.3" mat="svt-Aluminum" />
 
-<cyl name="SvtSi" id="4" zmin="-64.19786" zmax="64.19786" radius="12.000" thick="0.0050" mat="svt-Silicon" meas="2SideSiInnerStriplets,SiStripletsdEdx" overlap="0.0" />
-<cyl name="SvtKapton" id="4" zmin="-64.22252" zmax="64.22252" radius="12.005" thick="0.0050" mat="svt-Kapton" overlap="0.0" />
-<ring name="SvtSupport" id="4" z="64.19786" lowradius="11.975" hiradius="12.025" thick="0.3" mat="svt-Aluminum" />
+<cyl name="SvtSi" id="4" zmin="-69.19786" zmax="69.19786" radius="12.000" thick="0.0050" mat="svt-Silicon" meas="2SideSiInnerStriplets,SiStripletsdEdx" overlap="0.0" />
+<cyl name="SvtKapton" id="4" zmin="-69.22252" zmax="69.22252" radius="12.005" thick="0.0050" mat="svt-Kapton" overlap="0.0" />
+<ring name="SvtSupport" id="4" z="69.19786" lowradius="11.975" hiradius="12.025" thick="0.3" mat="svt-Aluminum" />
 
-<cyl name="SvtSi" id="5" zmin="-69.13101" zmax="69.13101" radius="13.000" thick="0.0050" mat="svt-Silicon" meas="2SideSiInnerStriplets,SiStripletsdEdx" overlap="0.0" />
-<cyl name="SvtKapton" id="5" zmin="-69.15568" zmax="69.15568" radius="13.005" thick="0.0050" mat="svt-Kapton" overlap="0.0" />
-<ring name="SvtSupport" id="5" z="69.13101" lowradius="12.975" hiradius="13.025" thick="0.3" mat="svt-Aluminum" />
+<cyl name="SvtSi" id="5" zmin="-74.13101" zmax="74.13101" radius="13.000" thick="0.0050" mat="svt-Silicon" meas="2SideSiInnerStriplets,SiStripletsdEdx" overlap="0.0" />
+<cyl name="SvtKapton" id="5" zmin="-74.15568" zmax="74.15568" radius="13.005" thick="0.0050" mat="svt-Kapton" overlap="0.0" />
+<ring name="SvtSupport" id="5" z="74.13101" lowradius="12.975" hiradius="13.025" thick="0.3" mat="svt-Aluminum" />
+
 	      <!-- radiator -->
-<rect name="RadPb" id="0" orientation="1" centerrho="8.00" centerz="0" centerphi="0.196350"             usize="3.1826" vsize="88.9305" thick="0.0560" mat="pep-Lead" axisphi="1.767146" />
-<rect name="RadPb" id="1" orientation="1" centerrho="8.00" centerz="0" centerphi="0.589049"             usize="3.1826" vsize="88.9305" thick="0.0560" mat="pep-Lead" axisphi="2.159845" />
-<rect name="RadPb" id="2" orientation="1" centerrho="8.00" centerz="0" centerphi="0.981748"             usize="3.1826" vsize="88.9305" thick="0.0560" mat="pep-Lead" axisphi="2.552544" />
-<rect name="RadPb" id="3" orientation="1" centerrho="8.00" centerz="0" centerphi="1.374447"             usize="3.1826" vsize="88.9305" thick="0.0560" mat="pep-Lead" axisphi="2.945243" />
-<rect name="RadPb" id="4" orientation="1" centerrho="8.00" centerz="0" centerphi="1.767146"             usize="3.1826" vsize="88.9305" thick="0.0560" mat="pep-Lead" axisphi="3.337942" />
-<rect name="RadPb" id="5" orientation="1" centerrho="8.00" centerz="0" centerphi="2.159845"             usize="3.1826" vsize="88.9305" thick="0.0560" mat="pep-Lead" axisphi="3.730641" />
-<rect name="RadPb" id="6" orientation="1" centerrho="8.00" centerz="0" centerphi="2.552544"             usize="3.1826" vsize="88.9305" thick="0.0560" mat="pep-Lead" axisphi="4.123340" />
-<rect name="RadPb" id="7" orientation="1" centerrho="8.00" centerz="0" centerphi="2.945243"             usize="3.1826" vsize="88.9305" thick="0.0560" mat="pep-Lead" axisphi="4.516039" />
+<rect name="RadPb" id="0" orientation="1" centerrho="8.00" centerz="0" centerphi="0.196350"             usize="3.1826" vsize="98.9305" thick="0.0560" mat="pep-Lead" axisphi="1.767146" />
+<rect name="RadPb" id="1" orientation="1" centerrho="8.00" centerz="0" centerphi="0.589049"             usize="3.1826" vsize="98.9305" thick="0.0560" mat="pep-Lead" axisphi="2.159845" />
+<rect name="RadPb" id="2" orientation="1" centerrho="8.00" centerz="0" centerphi="0.981748"             usize="3.1826" vsize="98.9305" thick="0.0560" mat="pep-Lead" axisphi="2.552544" />
+<rect name="RadPb" id="3" orientation="1" centerrho="8.00" centerz="0" centerphi="1.374447"             usize="3.1826" vsize="98.9305" thick="0.0560" mat="pep-Lead" axisphi="2.945243" />
+<rect name="RadPb" id="4" orientation="1" centerrho="8.00" centerz="0" centerphi="1.767146"             usize="3.1826" vsize="98.9305" thick="0.0560" mat="pep-Lead" axisphi="3.337942" />
+<rect name="RadPb" id="5" orientation="1" centerrho="8.00" centerz="0" centerphi="2.159845"             usize="3.1826" vsize="98.9305" thick="0.0560" mat="pep-Lead" axisphi="3.730641" />
+<rect name="RadPb" id="6" orientation="1" centerrho="8.00" centerz="0" centerphi="2.552544"             usize="3.1826" vsize="98.9305" thick="0.0560" mat="pep-Lead" axisphi="4.123340" />
+<rect name="RadPb" id="7" orientation="1" centerrho="8.00" centerz="0" centerphi="2.945243"             usize="3.1826" vsize="98.9305" thick="0.0560" mat="pep-Lead" axisphi="4.516039" />
   </volume>
         </detector>
         <!-- voxel parameter config section must have the same section name as the volume -->

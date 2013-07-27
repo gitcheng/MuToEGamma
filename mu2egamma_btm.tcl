@@ -5,6 +5,7 @@ FwkCfgVar MEGDEBUGALL
 FwkCfgVar MEGDEBUG
 FwkCfgVar PacDisplayFileName
 FwkCfgVar BeamConstraint
+FwkCfgVar DoRefit
 
 set PmcAnalysis BtuTupleMaker
 
@@ -45,14 +46,16 @@ talkto muToEGamma {
 }
 
 # Refit with target constraint
-seq append PmcPhysicsSequence MuToEGammaAnalysis
-talkto MuToEGammaAnalysis {
-    muInputListName  set muToEGamma
-    muOutputListName set muToEGammaRefit
-    if [ info exists MEGDEBUG ] {
-	verbose set t
+if [ info exists DoRefit ] {
+    seq append PmcPhysicsSequence MuToEGammaAnalysis
+    talkto MuToEGammaAnalysis {
+	muInputListName  set muToEGamma
+	muOutputListName set muToEGammaRefit
+	if [ info exists MEGDEBUG ] {
+	    verbose set t
+	}
+	show
     }
-    show
 }
 
 
@@ -107,16 +110,22 @@ if [ info exists PacDisplayFileName ] {
 }
 
 talkto BtuTupleMaker {
-    listToDump  set muToEGammaRefit
+    if [ info exists DoRefit ] {
+	listToDump  set muToEGammaRefit
+    } else {
+	listToDump  set muToEGamma
+    }
     fillMC set true
-    mcBlockContents  set "Mass Momentum Vertex"
+    mcBlockContents  set "Mass Momentum Vertex ProdVertex"
     ntpBlockConfigs  set "mu+  mu   2  10"
     ntpBlockConfigs  set "gamma gamma 2 20"
     ntpBlockConfigs  set "e+ e 0 20" 
     ntpBlockContents set "mu : MCIdx Mass Vertex VtxChi2 Momentum"
-    ntpAuxListContents set "mu: muToEGamma : preFit : Mass Momentum Vertex VtxChi2"
-    ntpBlockContents set "e : MCIdx Momentum"
-    ntpBlockContents set "gamma : MCIdx Mass Momentum Vertex VtxChi2"
+    if [ info exists DoRefit ] {
+	ntpAuxListContents set "mu: muToEGamma : preFit : Mass Momentum Vertex VtxChi2"
+    }
+    ntpBlockContents set "e : MCIdx Momentum ProdVertex"
+    ntpBlockContents set "gamma : MCIdx Mass Momentum Vertex VtxChi2 ProdVertex"
 
     show
 }
